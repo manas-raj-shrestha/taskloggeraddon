@@ -1,0 +1,38 @@
+{
+  "name": "Task Logger",
+  "description": "A simple add on to log your daily tasks and review it at the end of the day",
+  "key": "sample-hipchat-addon",
+  "links": {
+    "homepage": "https://www.lftechnology.com/",
+    "self": "http://2aca1954.ngrok.io/capabilities-descriptor.json"
+  },
+  "vendor": {
+    "name": "Atlassian",
+    "url": "https://www.atlassian.com/"
+  },
+  "capabilities": {
+    "hipchatApiConsumer": {
+      "fromName": "Sample Addon",
+      "scopes": ["send_notification", "view_room", "admin_room", "view_group", "view_messages"]
+    },
+    "installable": {
+      "allowGlobal": false,
+      "allowRoom": true,
+      "callbackUrl": "http://2aca1954.ngrok.io/api/rooms/installation"
+    },
+    "manage_rooms": {
+      "description": "Create, update, and remove rooms",
+      "id": "manage_rooms",
+      "name": "Manage Rooms"
+    }
+  },
+  "webhook": [
+    {
+      "url": "http://2aca1954.ngrok.io/api/tasks",
+      "pattern": "^/[tT][aA][sS][kK]",
+      "event": "room_message",
+      "authentication": "none",
+      "name": "Echo"
+    }
+  ]
+}
