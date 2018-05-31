@@ -1,1 +1,1 @@
-A simple add on log your tasks and time and log it at the end of the day
+A simple add on to log your tasks and time and log it at the end of the day
